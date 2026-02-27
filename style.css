@@ -1,0 +1,58 @@
+/*
+Theme Name: IUS GENTIUM
+Theme URI: 
+Author: ana
+Author URI: 
+Description: Professional academic WordPress Block Theme following WCAG 2.1 accessibility standards.
+Requires at least: 6.2
+Tested up to: 6.5
+Requires PHP: 7.4
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ius-gentium
+Tags: block-theme, accessibility-ready, custom-colors, custom-typography, responsive-layout, academic
+*/
+
+/* --- Accessibility & Focus States Fallbacks --- */
+
+/* Ensure proper focus states for links and interactive elements not fully covered by theme.json */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid #ffbf47; /* High contrast focus ring */
+    outline-offset: 2px;
+}
+
+/* Skip link styling - hidden until focused */
+.skip-link:not(:focus):not(:active) {
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+.skip-link:focus {
+    background-color: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    clip-path: none;
+    color: #0d2b4f;
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Ensure it stays above everything */
+}
